@@ -6,6 +6,8 @@ import android.view.View
 import android.widget.RadioButton
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import android.content.Intent
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -55,12 +57,14 @@ class MainActivity : AppCompatActivity() {
 
         if (validation) {
 
+            val languageId = findViewById<RadioButton>(language.checkedRadioButtonId)
+
             var toastText: String
 
             val titleText = "Title = " + movie_title.text + "\n"
             val descText = "Overview = " + description.text + "\n"
             val releaseDateText = "Release Date = " + releaseDate.text + "\n"
-            val languageText = "Language = " + findViewById<RadioButton>(language.checkedRadioButtonId).text + "\n"
+            val languageText = "Language = " + languageId.text + "\n"
             val suitabilityText = "Suitable for all ages = " + suitChk1.isChecked + "\n"
 
             toastText = titleText + descText + releaseDateText + languageText + suitabilityText
@@ -89,7 +93,18 @@ class MainActivity : AppCompatActivity() {
                 Toast.LENGTH_LONG
             ).show()
 
-        }
+            val movieIntent = Intent(this, MovieEntity::class.java).apply {
 
+                putExtra("title", movie_title.text)
+                putExtra("overview", description.text)
+                putExtra("language", languageId.text)
+                putExtra("releaseDate", releaseDate.text)
+                putExtra("suitability", suitChk1.isChecked)
+
+            }
+
+            startActivity(movieIntent)
+
+        }
     }
 }

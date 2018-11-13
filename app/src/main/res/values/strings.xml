@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">Movie Rater [Basic]</string>
+    <!-- Add Movie -->
+    <string name="app_name">Movie Rater</string>
     <string name="title_text">Name</string>
     <string name="title_hint">Enter the title of movie</string>
     <string name="desc_text">Description</string>
@@ -15,4 +16,15 @@
     <string name="suit_chk2">Violence</string>
     <string name="suit_chk3">Language used</string>
     <string name="add_btn">ADD MOVIE</string>
+
+    <!-- View Movie -->
+    <string name="view_title_text">Title:</string>
+    <string name="view_desc_text">Overview:</string>
+    <string name="view_lang_text">Language:</string>
+    <string name="view_date_text">Release date:</string>
+    <string name="suit_text">Suitable for children below 13:</string>
+
+    <!-- Rate Movie -->
+    <string name="review_text">Enter your review for the movie: </string>
+    <string name="view_text">Share your view on the show</string>
 </resources>
