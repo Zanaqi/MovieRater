@@ -1,13 +1,12 @@
 package com.example.mirza.movieraterbasic
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.RadioButton
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
-import android.content.Intent
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -75,7 +74,8 @@ class MainActivity : AppCompatActivity() {
 
                 if (suitChk2.isChecked) {
 
-                    reasonText += suitChk2.text + "\n"
+                    reasonText += suitChk2.text
+                    reasonText += "\n"
 
                     if (suitChk3.isChecked) {
 
@@ -93,18 +93,8 @@ class MainActivity : AppCompatActivity() {
                 Toast.LENGTH_LONG
             ).show()
 
-            val movieIntent = Intent(this, MovieEntity::class.java).apply {
-
-                putExtra("title", movie_title.text)
-                putExtra("overview", description.text)
-                putExtra("language", languageId.text)
-                putExtra("releaseDate", releaseDate.text)
-                putExtra("suitability", suitChk1.isChecked)
-
-            }
-
-            startActivity(movieIntent)
-
+            val intent = Intent(this, ViewMovieActivity::class.java)
+            startActivity(intent)
         }
     }
 }
