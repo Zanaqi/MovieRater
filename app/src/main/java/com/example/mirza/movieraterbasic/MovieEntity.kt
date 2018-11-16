@@ -10,9 +10,9 @@ class MovieEntity {
 
     init {
         title = "Venom"
-        overview = "Black Goo is good"
+        overview = "When Eddie Brock acquires the powers of a symbiote, he will have to release his alter-ego Venom to save his life."
         language = "English"
-        releaseDate = "Today"
+        releaseDate = "03-10-2018"
         suitable = "Yes"
     }
 
