@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ViewMovieActivity"/>
+        <activity android:name=".RateMovieActivity"/>
     </application>
 
 </manifest>
