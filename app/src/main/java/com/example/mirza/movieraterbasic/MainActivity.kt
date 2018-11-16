@@ -92,9 +92,6 @@ class MainActivity : AppCompatActivity() {
                 toastText,
                 Toast.LENGTH_LONG
             ).show()
-
-            val intent = Intent(this, ViewMovieActivity::class.java)
-            startActivity(intent)
         }
     }
 }
