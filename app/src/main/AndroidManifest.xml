@@ -9,21 +9,18 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".AddMovieActivity">
+        <activity android:name=".LandingPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".RateMovieActivity"/>
-        <activity android:name=".LandingPage">
+        <activity android:name=".AddMovie">
         </activity>
         <activity android:name=".EditMovie">
         </activity>
         <activity android:name=".ViewMovieDetails">
-        </activity>
-        <activity android:name=".AddMovie">
         </activity>
         <activity android:name=".RateMovie">
         </activity>

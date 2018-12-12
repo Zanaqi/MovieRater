@@ -34,4 +34,6 @@
     <!-- Add Movie Menu -->
     <string name="miAdd_text">Add</string>
     <string name="miClear_text">Clear Entries</string>
+    <!-- Rate Movie Menu -->
+    <string name="miSubmit_text">Submit</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.mirza.movieraterbasic
 
+import android.app.Activity
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -15,23 +16,34 @@ class ViewMovieDetails : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_movie_details)
 
-        registerForContextMenu(review)
+        registerForContextMenu(review_text)
 
-        val movie = MovieEntity()
+        val title = intent.getStringExtra("title")
+        val desc = intent.getStringExtra("desc")
+        val lang = intent.getStringExtra("lang")
+        val date = intent.getStringExtra("date")
+        val suitable = intent.getStringExtra("suitable")
 
-        title_value.setText(movie.title)
-        desc_value.setText(movie.overview)
-        lang_value.setText(movie.language)
-        date_value.setText(movie.releaseDate)
+        title_value.setText(title)
+        desc_value.setText(desc)
+        lang_value.setText(lang)
+        date_value.setText(date)
+        suit_value.setText(suitable)
 
+        val actionBar = supportActionBar
+        actionBar!!.setDisplayHomeAsUpEnabled(true)
+    }
 
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
 
         super.onCreateContextMenu(menu, v, menuInfo)
 
-        if (v?.id == R.id.review) {
+        if (v?.id == R.id.review_text) {
             menu?.add(1,1001,1,"Add Review")
         }
 
@@ -41,11 +53,26 @@ class ViewMovieDetails : AppCompatActivity() {
 
         if (item?.itemId == 1001) {
             val rateMovieIntent = Intent(this, RateMovie::class.java)
-            startActivity(rateMovieIntent)
+            startActivityForResult(rateMovieIntent, 1)
         }
 
         return super.onContextItemSelected(item)
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 1) {
+            if (resultCode == Activity.RESULT_OK) {
+                val rating = data!!.getFloatExtra("rating", 1.2f)
+                val review = data.getStringExtra("review")
+
+                ratingStars.rating = rating
+                review_text.setText(review)
+            }
+        }
     }
 
 }
