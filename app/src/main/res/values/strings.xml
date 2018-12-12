@@ -16,14 +16,22 @@
     <string name="suit_chk2">Violence</string>
     <string name="suit_chk3">Language used</string>
     <string name="add_btn">ADD MOVIE</string>
-
     <!-- View Movie -->
     <string name="view_title_text">Title:</string>
     <string name="view_desc_text">Overview:</string>
+    <string name="review_text">Reviews:</string>
+    <string name="review_text2">No Reviews yet.\nLong press to add your review.</string>
     <string name="view_lang_text">Language:</string>
     <string name="view_date_text">Release date:</string>
     <string name="suit_text">Suitable for children below 13:</string>
-
     <!-- Rate Movie -->
     <string name="view_text">Share your view on the show</string>
+    <!-- Landing Page -->
+    <string name="landing_page_text">You have not added a movie\nLong Press me to add a movie</string>
+    <!-- Edit Movie Details Menu -->
+    <string name="miSave_text">Save</string>
+    <string name="miCancel_text">Cancel</string>
+    <!-- Add Movie Menu -->
+    <string name="miAdd_text">Add</string>
+    <string name="miClear_text">Clear Entries</string>
 </resources>
