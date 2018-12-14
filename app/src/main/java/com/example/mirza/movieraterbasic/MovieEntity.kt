@@ -1,6 +1,7 @@
 package com.example.mirza.movieraterbasic
 
-class MovieEntity {
+open class MovieEntity(title: String, overview: String, language: String, releaseDate: String, suitable: String,
+                  violence: Boolean, languageUsed: Boolean, mImageDrawable: Int) {
 
     var title: String
     var overview: String
@@ -9,15 +10,19 @@ class MovieEntity {
     var suitable: String
     var violence: Boolean
     var languageUsed: Boolean
+    var mImageDrawable: Int
 
     init {
-        title = "Venom"
-        overview = "OverView"
-        language = "English"
-        releaseDate = "03-10-2018"
-        suitable = "Yes"
-        violence = true
-        languageUsed = false
+
+        this.title = title
+        this.overview = overview
+        this.language = language
+        this.releaseDate = releaseDate
+        this.suitable = suitable
+        this.violence = violence
+        this.languageUsed = languageUsed
+        this.mImageDrawable = mImageDrawable
+
     }
 
 }

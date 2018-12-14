@@ -8,11 +8,9 @@
         android:orientation="vertical"
         tools:context=".LandingPage">
     
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/landing_page_text"
-            android:id="@+id/landingPageText"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/movies_list"/>
 
 </LinearLayout>
