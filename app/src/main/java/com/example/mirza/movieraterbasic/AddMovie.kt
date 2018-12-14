@@ -61,10 +61,10 @@ class AddMovie : AppCompatActivity() {
 
             val languageId = findViewById<RadioButton>(language.checkedRadioButtonId)
 
-            val title = movie_title.text
-            val desc = description.text
+            val title = movie_title.text.toString()
+            val desc = description.text.toString()
             val lang = languageId.text
-            val date = releaseDate.text
+            val date = releaseDate.text.toString()
             var suitable: String
 
             if (suitChk1.isChecked) {

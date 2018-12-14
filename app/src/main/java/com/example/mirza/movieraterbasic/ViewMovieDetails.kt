@@ -31,15 +31,12 @@ class ViewMovieDetails : AppCompatActivity() {
         suit_value.setText(suitable)
 
         val actionBar = supportActionBar
-        actionBar!!.setDisplayHomeAsUpEnabled(true)
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
-    }
-
-    override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
+    override fun onCreateContextMenu(menu: ContextMenu?,    v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
 
         super.onCreateContextMenu(menu, v, menuInfo)
 
@@ -70,6 +67,7 @@ class ViewMovieDetails : AppCompatActivity() {
                 val review = data.getStringExtra("review")
 
                 ratingStars.rating = rating
+                ratingStars.visibility = View.VISIBLE
                 review_text.setText(review)
             }
         }

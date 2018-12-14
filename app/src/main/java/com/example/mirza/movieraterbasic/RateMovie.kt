@@ -36,7 +36,7 @@ class RateMovie : AppCompatActivity() {
             val intent = Intent()
 
             intent.putExtra("rating", rating.rating)
-            intent.putExtra("review", review.text)
+            intent.putExtra("review", review.text.toString())
 
             setResult(Activity.RESULT_OK, intent)
 
