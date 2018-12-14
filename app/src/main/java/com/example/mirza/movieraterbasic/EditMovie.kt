@@ -28,34 +28,34 @@ class EditMovie : AppCompatActivity() {
             }
         }
 
-        val movie = MovieEntity()
-
-        movie_title.setText(movie.title)
-        description.setText(movie.overview)
-        releaseDate.setText(movie.releaseDate)
-
-        when (movie.language) {
-            rBtnEng.text -> rBtnEng.isChecked = true
-            rBtnChi.text -> rBtnChi.isChecked = true
-            rBtnMal.text -> rBtnMal.isChecked = true
-            rBtnTam.text -> rBtnTam.isChecked = true
-        }
-
-        if (movie.suitable == "Yes") {
-
-            suitChk1.isChecked = true
-
-            suitChk2.setVisibility(View.VISIBLE)
-            suitChk3.setVisibility(View.VISIBLE)
-
-            if (movie.violence) {
-                suitChk2.isChecked = true
-            }
-
-            if (movie.languageUsed) {
-                suitChk3.isChecked = true
-            }
-        }
+//        val movie = MovieEntity()
+//
+//        movie_title.setText(movie.title)
+//        description.setText(movie.overview)
+//        releaseDate.setText(movie.releaseDate)
+//
+//        when (movie.language) {
+//            rBtnEng.text -> rBtnEng.isChecked = true
+//            rBtnChi.text -> rBtnChi.isChecked = true
+//            rBtnMal.text -> rBtnMal.isChecked = true
+//            rBtnTam.text -> rBtnTam.isChecked = true
+//        }
+//
+//        if (movie.suitable == "Yes") {
+//
+//            suitChk1.isChecked = true
+//
+//            suitChk2.setVisibility(View.VISIBLE)
+//            suitChk3.setVisibility(View.VISIBLE)
+//
+//            if (movie.violence) {
+//                suitChk2.isChecked = true
+//            }
+//
+//            if (movie.languageUsed) {
+//                suitChk3.isChecked = true
+//            }
+//        }
 
         val actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)

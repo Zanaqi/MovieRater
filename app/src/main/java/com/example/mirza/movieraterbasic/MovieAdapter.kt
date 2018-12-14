@@ -21,15 +21,11 @@ class MovieAdapter : ArrayAdapter<MovieEntity> {
     }
 
     @NonNull
-    override fun getView(position: Int, convertView: View, parent: ViewGroup): View {
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
-        var listItem = convertView
+        val listItem = LayoutInflater.from(mContext).inflate(R.layout.list_item, parent, false)
 
-        if (listItem == null) {
-            listItem = LayoutInflater.from(mContext).inflate(R.layout.list_item, parent, false)
-        }
-
-        val currentMovie = moviesList.get(position)
+        val currentMovie = getItem(position) as MovieEntity
 
         val image = listItem.findViewById<ImageView>(R.id.imageView_poster)
         image.setImageResource(currentMovie.mImageDrawable)

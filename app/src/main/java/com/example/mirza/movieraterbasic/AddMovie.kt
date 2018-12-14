@@ -62,6 +62,9 @@ class AddMovie : AppCompatActivity() {
             val valid = formValidate()
 
             if (valid) {
+
+                val movie = applicationContext as Movie
+
                 val viewMovieIntent = Intent(this, ViewMovieDetails::class.java)
 
                 val languageId = findViewById<RadioButton>(language.checkedRadioButtonId)
@@ -89,6 +92,13 @@ class AddMovie : AppCompatActivity() {
                 viewMovieIntent.putExtra("lang", lang)
                 viewMovieIntent.putExtra("date", date)
                 viewMovieIntent.putExtra("suitable", suitable)
+                viewMovieIntent.putExtra("violence", suitChk2.isChecked)
+                viewMovieIntent.putExtra("langaugeUsed", suitChk3.isChecked)
+
+                val movieEn = MovieEntity(title, desc, lang.toString(), date, suitable, suitChk2.isChecked,
+                    suitChk3.isChecked, R.drawable.movie)
+
+                movie.add(movieEn)
 
                 startActivity(viewMovieIntent)
             }

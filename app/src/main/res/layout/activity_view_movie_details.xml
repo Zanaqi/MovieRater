@@ -81,4 +81,16 @@
             android:layout_height="wrap_content"
             android:id="@+id/suit_value"/>
 
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/violence_value"
+            android:visibility="gone"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/langUsed_value"
+            android:visibility="gone"/>
+
 </LinearLayout>

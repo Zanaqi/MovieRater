@@ -1,6 +1,8 @@
 package com.example.mirza.movieraterbasic
 
-open class MovieEntity(title: String, overview: String, language: String, releaseDate: String, suitable: String,
+import android.app.Application
+
+class MovieEntity(title: String, overview: String, language: String, releaseDate: String, suitable: String,
                   violence: Boolean, languageUsed: Boolean, mImageDrawable: Int) {
 
     var title: String
@@ -23,6 +25,34 @@ open class MovieEntity(title: String, overview: String, language: String, releas
         this.languageUsed = languageUsed
         this.mImageDrawable = mImageDrawable
 
+    }
+
+}
+
+class Movie: Application() {
+
+    var movieArr: ArrayList<MovieEntity>
+    var singleton: Movie? = null
+
+    init {
+        this.movieArr = arrayListOf()
+    }
+
+    fun add(movie: MovieEntity) {
+        this.movieArr.add(movie)
+    }
+
+    fun get(): ArrayList<MovieEntity> {
+        return this.movieArr
+    }
+
+    fun getInstance(): Movie? {
+        return singleton
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+        singleton = this
     }
 
 }

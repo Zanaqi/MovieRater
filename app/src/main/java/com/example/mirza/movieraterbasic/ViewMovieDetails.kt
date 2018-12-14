@@ -23,12 +23,16 @@ class ViewMovieDetails : AppCompatActivity() {
         val lang = intent.getStringExtra("lang")
         val date = intent.getStringExtra("date")
         val suitable = intent.getStringExtra("suitable")
+        val violence = intent.getBooleanExtra("violence", false)
+        val langaugeUsed = intent.getBooleanExtra("languageUsed", false)
 
         title_value.setText(title)
         desc_value.setText(desc)
         lang_value.setText(lang)
         date_value.setText(date)
         suit_value.setText(suitable)
+        violence_value.setText(violence.toString())
+        langUsed_value.setText(langaugeUsed.toString())
 
         val actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
@@ -36,7 +40,7 @@ class ViewMovieDetails : AppCompatActivity() {
 
     }
 
-    override fun onCreateContextMenu(menu: ContextMenu?,    v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
+    override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
 
         super.onCreateContextMenu(menu, v, menuInfo)
 
