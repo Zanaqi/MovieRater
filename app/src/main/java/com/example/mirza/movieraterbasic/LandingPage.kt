@@ -21,7 +21,6 @@ class LandingPage : AppCompatActivity() {
 
         if (v?.id == R.id.landingPageText) {
             menu?.add(1,1001,1,"Add")
-            menu?.add(1,1002,2,"Edit")
         }
     }
 
@@ -29,10 +28,6 @@ class LandingPage : AppCompatActivity() {
 
         if (item?.itemId == 1001) {
             val addMovieIntent = Intent(this, AddMovie::class.java)
-            startActivity(addMovieIntent)
-        }
-        else if (item?.itemId == 1002) {
-            val addMovieIntent = Intent(this, EditMovie::class.java)
             startActivity(addMovieIntent)
         }
 
