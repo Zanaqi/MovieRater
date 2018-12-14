@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".AddMovie">
         </activity>
-        <activity android:name=".EditMovie">
+        <activity android:name=".EditMovie"
+                  android:parentActivityName=".LandingPage">
         </activity>
         <activity android:name=".ViewMovieDetails"
                   android:parentActivityName=".LandingPage">
